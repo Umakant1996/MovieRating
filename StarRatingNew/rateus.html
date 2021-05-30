@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
+   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+
+
+   <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+   <script src="rateus.js"></script>
+
+   <link rel="stylesheet" href="./Style.css" />
+</head>
+
+<body>
+
+   <!--start movie ms dhoni-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/msdhoni.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">M.S. Dhoni: The Untold Story</p>
+            <p> is a 2016 Indian Hindi-language biographical sports drama film
+               written and directed by Neeraj Pandey. It is based on the life of former Test, ODI and T20I captain of
+               the Indian
+               national cricket team, Mahendra Singh Dhoni. The film stars Sushant Singh Rajput as Dhoni, along with
+               Disha Patani,
+               Kiara Advani, and Anupam Kher. The film chronicles the life of Dhoni from a young age through a series of
+               life
+               events.</p>
+
+            <i class="fas fa-star" id="1" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="2" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="3" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="4" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="5" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="100">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputMsDhoni" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputMsDhoni','msDhoniUl','Dhoni')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="msDhoniUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie ms dhoni-->
+
+   <!--start movie dangal-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/dangal1.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Dangal </p>
+            <p> is a 2016 Indian Hindi-language biographical sports drama film directed by Nitesh
+               Tiwari, written by Tiwari, Piyush Gupta, Shreyas Jain and Nikhil Mehrotra, and produced by Aamir Khan and
+               Kiran Rao
+               under Aamir Khan Productions with Siddharth Roy Kapur producing the original Hindi version under the
+               Disney banner
+               and the dubbed local and overseas versions under the UTV Motion Pictures banner.</p>
+
+            <i class="fas fa-star" id="6" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="7" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="8" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="9" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="10" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="101">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputDangal" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputDangal','dangalUl','Dangal')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="dangalUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie dangal-->
+
+   <!--start movie queen-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/quuen.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Queen</p>
+            <p> is a 2014 Indian comedy-drama film directed by Vikas Bahl and produced by Anurag Kashyap, Vikramaditya
+               Motwane,
+               and Madhu Mantena. The film stars Kangana Ranaut in the lead role, with Lisa Haydon and Rajkummar Rao
+               playing
+               supporting roles. The film follows the story of Rani Mehra, a diffident Punjabi girl from New Delhi who
+               embarks on
+               her honeymoon to Paris and Amsterdam by herself after her fiancé calls off their wedding.</p>
+            <i class="fas fa-star" id="11" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="12" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="13" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="14" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="15" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="102">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputQueen" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputQueen','queenUl','Queen')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="queenUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie queen-->
+
+   <!--start movie tanu-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/tanuwedmanu1.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Tanu Weds Manu </p>
+            <p>Tanu Weds Manu is a 2011 Indian Hindi-language romantic comedy-drama by Aanand L. Rai, and produced by
+               Shailesh R
+               Singh. It stars R. Madhavan, Kangana Ranaut, Jimmy Sheirgill, Eijaz Khan, Swara Bhaskar and Deepak
+               Dobriyal.
+               The story of the film has been written by Himanshu Sharma, music is directed by Krsna Solo and the lyrics
+               penned
+               by Rajshekhar. The film was released on 25 February 2011.Upon release, the film was commercially
+               successful,
+               particularly in Delhi, UP and Punjab. </p>
+            <i class="fas fa-star" id="16" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="17" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="18" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="19" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="20" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="103">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputTanu" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputTanu','tanuUl','Tanu')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="tanuUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie tanu-->
+
+   <!--start movie mery kom-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/merykom.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Mary Kom </p>
+            <p>Mary Kom is a 2014 Indian Hindi-language biographical sports film directed by Omung Kumar and produced by
+               Viacom18
+               Motion Pictures and Sanjay Leela Bhansali. The film stars Priyanka Chopra in the lead role of the
+               eponymous boxer,
+               with newcomer Darshan Kumar and Sunil Thapa in supporting roles of her husband and mentor, respectively,
+               and depicts
+               Kom's journey of becoming a boxer to her victory at the 2008 World Boxing Championships in Ningbo.</p>
+            <i class="fas fa-star" id="21" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="22" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="23" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="24" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="25" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="104">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputMeryKom" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputMeryKom','merykomUl','MeryKom')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="merykomUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie mery kom-->
+
+   <!--start movie bhagmilka-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/bhagmilkabhag.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Bhaag Milkha Bhaag</p>
+            <p>Bhaag Milkha Bhaag is a 2013 Indian biographical sports drama film directed by Rakeysh Omprakash Mehra
+               from a
+               script written by Prasoon Joshi. The story is based on the life of Milkha Singh, an Indian athlete who
+               was a
+               Commonwealth Champion and ×2 400m Asian champion and an Olympian.</p>
+            <i class="fas fa-star" id="26" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="27" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="28" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="29" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="30" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="105">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputBhagMilka" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputBhagMilka','bhagmilkaUl','BhaagMilka')" class="btn btn-add"
+                     type="button">Add Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="bhagmilkaUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie bhagmilka-->
+
+   <!--start movie urii-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/urri3.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Uri: The Surgical Strike</p>
+            <p>Uri: The Surgical Strike is a 2019 Indian Hindi-language military action film.It is directed and written
+               by
+               debutant Aditya Dhar. Produced by Ronnie Screwvala, the film stars Vicky Kaushal, Paresh Rawal, Yami
+               Gautam, Mohit
+               Raina and Kirti Kulhari.The plot is a dramatised account of the retaliation to the 2016 Uri attack,
+               following Major
+               Vihaan Singh Shergill of the Indian Army, who plays a leading role in the events</p>
+            <i class="fas fa-star" id="31" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="32" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="33" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="34" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="35" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="106">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputUrri" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputUrri','urriUl','Urri')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="urriUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie urii-->
+   <!--start movie laggan-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/lagan.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Lagaan</p>
+            <p>Lagaan , released internationally as Lagaan: Once Upon a Time in India, is a 2001 Indian Hindi-language
+               epic
+               musical sports film written and directed by Ashutosh Gowariker, and produced by and starring Aamir Khan,
+               along with debutant Gracy Singh and British actors Rachel Shelley and Paul Blackthorne in supporting
+               roles.</p>
+            <i class="fas fa-star" id="36" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="37" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="38" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="39" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="40" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="107">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputLagan" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputLagan','laganUl','Lagaan')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="laganUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie lagan-->
+   <!--start movie manjhi-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/manjhi.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Manjhi – The Mountain Man</p>
+            <p>Manjhi – The Mountain Man is a 2015 Indian Hindi-language biographical film based on the life of Dashrath
+               Manjhi.
+               Manjhi, widely known as the "Mountain Man", was a poor labourer in Gehlaur village, near Gaya in Bihar,
+               India, who
+               carved a path 9.1 metres (30 ft) wide and 110 metres (360 ft) long through a hill 7.6 metres (25 ft)
+               high,
+               using only a hammer and chisel.</p>
+            <i class="fas fa-star" id="41" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="42" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="43" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="44" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="45" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="108">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputManjhi" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputManjhi','manjhiUl','Manjhi')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="manjhiUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie manjhi-->
+
+   <!--start movie baby-->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <img src="MovieImg/baby.jpg" class="img-fluid img-thumbnail" style="width: 300px;height: 300px;">
+
+         </div>
+         <div class="col-md-4">
+            <p class="fw-bold">Baby </p>
+            <p>Baby is a 2015 Indian Hindi-language action thriller film written and directed by Neeraj Pandey.
+               The film stars Akshay Kumar in the lead role, along with Taapsee Pannu, Rana Daggubati, Danny Denzongpa,
+               Anupam Kher, Mikaal Zulfiqar, Kay Kay Menon, Madhurima Tuli and Rasheed Naz in supporting roles.</p>
+            <i class="fas fa-star" id="46" onclick="starAll(this,1)"></i>
+            <i class="fas fa-star" id="47" onclick="starAll(this,2)"></i>
+            <i class="fas fa-star" id="48" onclick="starAll(this,3)"></i>
+            <i class="fas fa-star" id="49" onclick="starAll(this,4)"></i>
+            <i class="fas fa-star" id="50" onclick="starAll(this,5)"></i>
+            <br />
+            <h5>Average Rating </h5>
+            <h5 id="109">0</h5>
+
+         </div>
+         <div class="col-md-4">
+
+
+            <div class="input-group">
+               <input type="text" class="form-control" id="inputBaby" required>
+               <div class="input-group-append">
+                  <button onclick="addItem('inputBaby','babyUl','Baby')" class="btn btn-add" type="button">Add
+                     Item</button>
+                  <!-- <button onclick="removeItem()" class="btn btn-remove" type="button">Remove Item</button>-->
+               </div>
+            </div>
+
+            <!-- ------------------------------------ -->
+            <div style="overflow-y: scroll; height:300px; color: rgb(207, 42, 172);">
+
+               <ul id="babyUl">
+
+
+               </ul>
+
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!--end movie baby-->
+
+   
+</body>
+
+</html>
